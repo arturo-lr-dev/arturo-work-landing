@@ -154,36 +154,39 @@ export function Navigation() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
           >
-            <nav className="flex h-full flex-col justify-center px-8">
-              {navItems.map((item, index) => (
-                <span key={item.href} className="block overflow-hidden">
-                  <motion.button
-                    onClick={() => scrollToSection(item.href)}
-                    className="block py-2 text-left font-display text-5xl font-extrabold uppercase text-chalk hover:text-ultra transition-colors"
-                    initial={{ y: "110%" }}
-                    animate={{ y: "0%" }}
-                    exit={{ y: "110%" }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.08 + index * 0.06,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                  >
-                    {item.label}
-                  </motion.button>
-                </span>
-              ))}
-              <motion.button
-                onClick={() => scrollToSection("#contact")}
-                className="mt-10 self-start rounded-full border border-chalk px-7 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-chalk"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.5 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Hablemos
-              </motion.button>
+            {/* my-auto centers when it fits; overflow-y-auto scrolls when it doesn't */}
+            <nav className="flex h-full flex-col overflow-y-auto px-8 pb-10 pt-24">
+              <div className="my-auto">
+                {navItems.map((item, index) => (
+                  <span key={item.href} className="block overflow-hidden">
+                    <motion.button
+                      onClick={() => scrollToSection(item.href)}
+                      className="block py-1.5 text-left font-display text-4xl font-extrabold uppercase text-chalk hover:text-ultra transition-colors"
+                      initial={{ y: "110%" }}
+                      animate={{ y: "0%" }}
+                      exit={{ y: "110%" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.08 + index * 0.06,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
+                    >
+                      {item.label}
+                    </motion.button>
+                  </span>
+                ))}
+                <motion.button
+                  onClick={() => scrollToSection("#contact")}
+                  className="mt-8 rounded-full border border-chalk px-7 py-3.5 font-mono text-xs uppercase tracking-[0.18em] text-chalk"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ delay: 0.5 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Cuéntame el problema
+                </motion.button>
+              </div>
             </nav>
           </motion.div>
         )}

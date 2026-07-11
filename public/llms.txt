@@ -2,7 +2,7 @@
 
 > Arturo Legaspi Rodrigo es Tech Lead en banca digital y consultor independiente de software, con más de 10 años de experiencia. Su posicionamiento: "No entrego código, entrego sistemas que se pueden auditar, escalar y heredar." Combina arquitectura técnica seria con entregables de nivel ejecutivo y visión de negocio.
 
-Sitio oficial: https://arturo-dev.vercel.app/ — página personal informativa en español.
+Sitio oficial: https://arturo.work — página personal informativa en español.
 
 ## Perfil
 

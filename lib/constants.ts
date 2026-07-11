@@ -6,7 +6,7 @@ export const siteConfig = {
   title: "Arturo Legaspi | Tech Lead & Consultor",
   description:
     "Tech Lead en banca digital y consultor independiente. Arquitectura de software, seguridad desde el diseño y sistemas que se pueden auditar, escalar y heredar.",
-  url: "https://arturo-dev.vercel.app/",
+  url: "https://arturo.work",
   ogImage: "/images/og-image.png",
   email: "arturo@legasint.com",
   phone: "+34 649 355 701",
