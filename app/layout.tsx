@@ -20,7 +20,7 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arturo.work"),
+  metadataBase: new URL("https://arturo-dev.vercel.app/"),
   title: {
     default: "Arturo Legaspi | Tech Lead & Consultor",
     template: "%s | Arturo Legaspi",
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     "liderazgo técnico",
     "Big Data",
   ],
-  authors: [{ name: "Arturo Legaspi", url: "https://arturo.work" }],
+  authors: [{ name: "Arturo Legaspi", url: "https://arturo-dev.vercel.app/" }],
   creator: "Arturo Legaspi",
   alternates: {
-    canonical: "https://arturo.work",
+    canonical: "https://arturo-dev.vercel.app/",
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://arturo.work",
+    url: "https://arturo-dev.vercel.app/",
     siteName: "Arturo Legaspi",
     title: "Arturo Legaspi | Tech Lead & Consultor",
     description:

@@ -6,7 +6,6 @@ import {
   About,
   Principles,
   Method,
-  Skills,
   Projects,
   Timeline,
   Contact,
@@ -28,7 +27,6 @@ export default function Home() {
           caption="Servicios core bancarios · millones de operaciones al día"
           mode="drift"
         />
-        <Skills />
         <Projects />
         <Interlude
           src="/images/proyect-2.png"

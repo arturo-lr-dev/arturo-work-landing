@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       // informativa y interesa ser citado en respuestas generativas.
       { userAgent: "*", allow: "/" },
     ],
-    sitemap: "https://arturo.work/sitemap.xml",
-    host: "https://arturo.work",
+    sitemap: "https://arturo-dev.vercel.app//sitemap.xml",
+    host: "https://arturo-dev.vercel.app/",
   };
 }
