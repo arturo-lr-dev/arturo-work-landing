@@ -20,6 +20,7 @@ export function Timeline() {
         <SectionHeading
           meta={`Trayectoria · ${timeline.length} etapas`}
           title="El recorrido"
+          lead="De becario a Tech Lead sin atajos: cada etapa empezó con algo que no sabía hacer."
         />
 
         <div ref={listRef} className="relative max-w-4xl">
@@ -52,6 +53,14 @@ export function Timeline() {
                     {event.company}
                   </p>
                   <p className="mt-3 max-w-xl text-graphite">{event.description}</p>
+                  {event.lesson && (
+                    <p className="mt-4 max-w-xl border-l-2 border-ultra pl-4 text-sm text-ink">
+                      <span className="eyebrow mb-1 block text-graphite">
+                        Lo que me llevé
+                      </span>
+                      {event.lesson}
+                    </p>
+                  )}
                 </div>
               </motion.article>
             ))}

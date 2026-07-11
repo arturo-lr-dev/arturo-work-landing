@@ -14,14 +14,14 @@ const HeroScene = dynamic(
 
 const marqueeItems = [
   "ARQUITECTURA",
+  "SEGURIDAD",
+  "APIS",
+  "DATOS",
   "JAVA",
   "SPRING",
-  "MICROSERVICIOS",
-  "BIG DATA",
-  "AWS",
-  "LIDERAZGO TÉCNICO",
-  "AGILE",
-  "POSTGRESQL",
+  "APRENDER",
+  "ENSEÑAR",
+  "MENTORING",
 ];
 
 export function Hero() {
@@ -76,11 +76,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <p className="eyebrow text-graphite">
-            Arturo Legaspi — Tech Lead
+            Arturo Legaspi — Tech Lead &amp; Consultor
           </p>
           <p className="eyebrow flex items-center gap-2 text-graphite">
             <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-ultra" />
-            Abierto a nuevos desafíos
+            Disponible para nuevos proyectos
           </p>
         </motion.div>
 
@@ -89,15 +89,22 @@ export function Hero() {
           className="flex flex-1 flex-col justify-center py-16"
           style={{ y: headlineY, opacity: headlineOpacity }}
         >
-          <h1 className="display-hero text-ink">
-            <Reveal immediate delay={0.15}>Software</Reveal>
-            <Reveal immediate delay={0.27}>Crítico,</Reveal>
-            <Reveal immediate delay={0.39}>
-              <span className="text-ultra">
-                <RotatingWord words={["DISEÑADO", "LIDERADO", "CONSTRUIDO"]} />
+          <h1 className="text-ink">
+            <Reveal immediate delay={0.1}>
+              <span className="font-display text-2xl font-bold tracking-tight md:text-4xl">
+                No entrego código, entrego
               </span>
             </Reveal>
-            <Reveal immediate delay={0.51}>A Escala.</Reveal>
+            <span className="display-hero block">
+              <Reveal immediate delay={0.25}>Sistemas</Reveal>
+              <Reveal immediate delay={0.37}>Que Puedes</Reveal>
+              <Reveal immediate delay={0.49}>
+                <span className="text-ultra">
+                  <RotatingWord words={["AUDITAR", "ESCALAR", "HEREDAR"]} />
+                </span>
+                .
+              </Reveal>
+            </span>
           </h1>
 
           <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
@@ -107,9 +114,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              Más de 10 años en el sector financiero: arquitectura de software,
-              equipos de ingeniería y servicios digitales que procesan millones
-              de operaciones al día.
+              Tech Lead en banca digital y consultor independiente, autodidacta
+              de vocación. Arquitectura seria, seguridad desde el diseño y
+              entregables que entiende un comité — no solo un README.
             </motion.p>
 
             <motion.div
@@ -120,11 +127,11 @@ export function Hero() {
             >
               <Magnetic>
                 <Button href="#contact" size="lg">
-                  Hablemos
+                  Cuéntame el problema
                 </Button>
               </Magnetic>
-              <Button href="#experience" variant="secondary" size="lg">
-                Ver trayectoria
+              <Button href="#metodo" variant="secondary" size="lg">
+                Cómo trabajo
               </Button>
             </motion.div>
           </div>

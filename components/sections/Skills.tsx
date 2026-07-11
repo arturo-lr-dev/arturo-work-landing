@@ -17,9 +17,9 @@ export function Skills() {
     <section id="skills" className="py-24 md:py-32">
       <Container>
         <SectionHeading
-          meta={`Stack · ${skills.length} tecnologías`}
+          meta={`Stack · ${skills.length} herramientas`}
           title="Las herramientas"
-          lead="El stack cambia según el proyecto; el criterio no. Este es el conjunto de trabajo actual."
+          lead="Este stack no salió de ningún máster: es la huella de diez años aprendiendo lo que cada reto pedía."
         />
 
         <div className="divide-y divide-line border-y border-line">

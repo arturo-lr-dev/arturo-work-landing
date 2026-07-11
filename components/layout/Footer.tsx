@@ -20,8 +20,9 @@ export function Footer() {
       <Container>
         <div className="flex flex-col justify-between gap-10 border-t border-chalk/15 pt-10 md:flex-row">
           <p className="max-w-sm text-sm text-chalk/60">
-            Tech Lead. Arquitectura de software, equipos de ingeniería y
-            soluciones digitales para el sector financiero.
+            Tech Lead y consultor independiente. Sistemas que se pueden
+            auditar, escalar y heredar — en banca, deporte profesional y donde
+            haya un reto serio.
           </p>
 
           <nav className="flex flex-wrap gap-x-8 gap-y-3">

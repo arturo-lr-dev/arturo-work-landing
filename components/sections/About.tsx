@@ -31,10 +31,10 @@ export function About() {
           {/* Statement */}
           <div className="lg:col-span-7">
             <p className="heading-3 text-ink">
-              <Reveal>La mejor arquitectura es la que</Reveal>
+              <Reveal>Lo que mejor sé hacer no me lo enseñó nadie:</Reveal>
               <Reveal delay={0.1}>
-                su equipo puede sostener —{" "}
-                <span className="text-ultra">construyo las dos cosas.</span>
+                lo aprendí haciéndolo,{" "}
+                <span className="text-ultra">y lo multiplico enseñándolo.</span>
               </Reveal>
             </p>
 
@@ -46,16 +46,25 @@ export function About() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <p>
-                Llevo más de diez años desarrollando software y diseñando
-                sistemas, la mayor parte en servicios financieros. Hoy ejerzo
-                como Tech Lead en Santander Digital Services, donde combino la
-                pasión técnica con la dirección de equipos.
+                La informática me atrapó antes de ser mi trabajo. Empecé de
+                becario en una consultora multinacional y hoy lidero equipos de
+                ingeniería en banca digital, pero lo que marca mi carrera no
+                son los cargos: es la manía de meterme donde todavía no sé.
+                Big Data cuando era backend, arquitectura cuando era
+                programador, liderazgo cuando era arquitecto.
               </p>
               <p>
-                Mi terreno es el software que no puede fallar: core bancario,
-                CRM, automatización de procesos. Defino la arquitectura,
-                acompaño al equipo que la construye y respondo por lo que llega
-                a producción.
+                Aprendo por mi cuenta, rápido y sin dramatismo — un reto nuevo
+                es la mejor descripción de puesto que conozco. Y lo aprendido
+                no se queda en mí: enseñar es la forma más honesta de comprobar
+                que entiendes algo, y por eso el mentoring no es un extra de mi
+                rol, es la mitad.
+              </p>
+              <p>
+                Hoy compagino el liderazgo técnico en banca con mi propio
+                estudio de consultoría para organizaciones deportivas y
+                financieras: dos mundos de máxima exigencia que se enseñan
+                mutuamente.
               </p>
             </motion.div>
 

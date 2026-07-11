@@ -22,11 +22,11 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   metadataBase: new URL("https://arturo.work"),
   title: {
-    default: "Arturo Legaspi | Tech Lead",
+    default: "Arturo Legaspi | Tech Lead & Consultor",
     template: "%s | Arturo Legaspi",
   },
   description:
-    "Tech Lead con más de 10 años de experiencia, especializado en arquitectura de software, gestión de equipos y soluciones digitales para el sector bancario.",
+    "Tech Lead en banca digital y consultor independiente. Arquitectura de software, seguridad desde el diseño y sistemas que se pueden auditar, escalar y heredar.",
   keywords: [
     "Tech Lead",
     "arquitectura de software",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://arturo.work",
     siteName: "Arturo Legaspi",
-    title: "Arturo Legaspi | Tech Lead",
+    title: "Arturo Legaspi | Tech Lead & Consultor",
     description:
-      "Arquitectura de software, equipos de ingeniería y soluciones digitales para el sector financiero.",
+      "Sistemas que se pueden auditar, escalar y heredar: arquitectura, seguridad y datos para banca y deporte profesional.",
     images: [
       {
         url: "/images/og-image.png",
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arturo Legaspi | Tech Lead",
+    title: "Arturo Legaspi | Tech Lead & Consultor",
     description:
-      "Arquitectura de software, equipos de ingeniería y soluciones digitales para el sector financiero.",
+      "Sistemas que se pueden auditar, escalar y heredar: arquitectura, seguridad y datos para banca y deporte profesional.",
     images: ["/images/og-image.png"],
   },
   robots: {

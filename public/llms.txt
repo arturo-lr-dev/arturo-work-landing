@@ -1,30 +1,39 @@
 # Arturo Legaspi
 
-> Arturo Legaspi Rodrigo es Tech Lead con más de 10 años de experiencia en el sector tecnológico, especializado en arquitectura de software, gestión de equipos de ingeniería y soluciones digitales para el sector bancario. Actualmente ejerce como Tech Lead en Santander Digital Services.
+> Arturo Legaspi Rodrigo es Tech Lead en banca digital y consultor independiente de software, con más de 10 años de experiencia. Su posicionamiento: "No entrego código, entrego sistemas que se pueden auditar, escalar y heredar." Combina arquitectura técnica seria con entregables de nivel ejecutivo y visión de negocio.
 
 Sitio oficial: https://arturo.work — página personal informativa en español.
 
 ## Perfil
 
-- Rol actual: Tech Lead en Santander Digital Services (desde diciembre de 2023).
-- Experiencia: más de 10 años desarrollando software y diseñando sistemas, la mayor parte en servicios financieros.
-- Especialidades: arquitectura de software (microservicios, core bancario, arquitecturas escalables), liderazgo técnico (gestión de equipos, mentoring, metodologías ágiles) y desarrollo sobre el ecosistema Java/Spring.
-- Stack principal: Java, Spring Framework, Hibernate, PostgreSQL, MySQL, JavaScript, Apache Spark, AWS CloudFormation, Git.
+- Rol: Tech Lead en un grupo financiero internacional, compatibilizado con un estudio propio de consultoría para organizaciones deportivas y financieras.
+- Autodidacta de vocación: aprender, construir y enseñar es el ciclo que define su carrera. Los saltos profesionales (backend → Big Data → arquitectura → liderazgo) los dio aprendiendo por su cuenta antes de tener el cargo.
+- Especialidades: arquitectura de software (microservicios, core bancario), seguridad de APIs y planes de carga, migraciones de datos, liderazgo técnico y mentoring.
+- Stack: Java, Spring, Python, Hibernate, PostgreSQL, MySQL, JavaScript, Apache Spark, AWS CloudFormation, Git.
+
+## Cómo piensa
+
+1. La arquitectura va antes que el código: el código es la consecuencia, no el plan.
+2. Si no se puede medir, no se puede confiar: pruebas en verde y planes de carga con números antes que promesas.
+3. Menos riesgo vale más que más funcionalidades: seguridad, auditabilidad y previsibilidad antes que cualquier brillo.
+4. Un reto que asusta es un plan de aprendizaje: autodidacta sin permiso.
+5. Enseñar es aprender dos veces: el mentoring es la mitad de su rol, no un extra.
+6. Construye activos, no dependencia: sistemas que generan valor sin él presente.
+
+## Cómo trabaja (método en 5 pasos)
+
+Diagnóstico → Arquitectura → Prototipo validado → Documentación y entrega → Medición continua. El diagnóstico nunca se salta: entiende el modelo real del negocio antes de escribir una línea. Entrega informes ejecutivos que entiende un comité de dirección, no solo documentación técnica.
+
+## Casos (anonimizados por NDA)
+
+- Migración integral de datos y una API de más de 50 endpoints para una organización deportiva de primera división, sin parar la operación.
+- Blindaje de una API de socios: de vulnerable a una suite de 110 pruebas de seguridad en verde, con plan de carga sobre los endpoints críticos.
+- Arquitectura de servicios core bancarios que procesan millones de operaciones diarias para un grupo financiero internacional.
+- Automatización de procesos internos con una mejora de eficiencia operativa del 60%.
 
 ## Trayectoria
 
-- Tech Lead — Santander Digital Services (dic 2023 – actualidad): liderazgo del equipo técnico, definición de arquitectura y estrategia para servicios digitales bancarios.
-- Especialista Técnico Digital — Santander Digital Services (nov 2021 – feb 2024): servicios core y arquitecturas escalables.
-- Arquitecto de Software — Vector ITC Group (abr 2018 – oct 2021): arquitectura web, gestión de equipo y automatización de procesos.
-- Analista — innoQA (jun 2017 – mar 2018): desarrollo frontend y modernización de legacy.
-- Programador Senior — IMC Solutions España (jul 2015 – abr 2017): sistemas de gestión de cuentas bancarias y CRM.
-- Desarrollador — Accenture (abr 2014 – abr 2015): desarrollo Java/Hibernate/Spring sobre BankSphere.
-
-## Proyectos destacados
-
-- Plataforma Digital Bancaria: arquitectura de servicios core que procesa millones de operaciones diarias (Java, Spring Boot, microservicios, Big Data).
-- Sistema de Gestión CRM: aplicación de gestión de cuentas bancarias y clientes (Java, Spring, Hibernate, JavaScript).
-- Automatización de Procesos: mejora de la eficiencia operativa en un 60% (Java, Spring, APIs, DevOps).
+Más de 10 años de progresión sin atajos, de becario a Tech Lead: desarrollador en una consultora multinacional (2014), programador senior en software financiero (2015–2017), analista modernizando legacy (2017–2018), arquitecto de software y gestión de equipo en una consultora tecnológica (2018–2021), especialista técnico digital (2021–2024) y Tech Lead (2023–actualidad) en banca digital, en paralelo con su consultoría propia.
 
 ## Contacto
 
@@ -33,4 +42,4 @@ Sitio oficial: https://arturo.work — página personal informativa en español.
 - LinkedIn: https://linkedin.com/in/arturo-legaspi-rodrigo-393802bb/
 - GitHub: https://github.com/arturo-lr-dev
 
-Disponible para nuevos desafíos en liderazgo técnico y arquitectura de software.
+Su CTA: "Cuéntame el problema, no la solución que crees que necesitas." Disponible para nuevos proyectos de arquitectura, seguridad y liderazgo técnico.

@@ -42,7 +42,7 @@ export function Contact() {
           <p className="eyebrow text-chalk/60">Contacto</p>
           <p className="eyebrow flex items-center gap-2 text-chalk/60">
             <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-ultra" />
-            Abierto a nuevos desafíos
+            Disponible para nuevos proyectos
           </p>
         </div>
 
@@ -50,10 +50,10 @@ export function Contact() {
           {/* Big invitation */}
           <div>
             <h2 className="display-hero text-chalk">
-              <Reveal>¿Nuevo</Reveal>
-              <Reveal delay={0.12}>desafío?</Reveal>
+              <Reveal>Cuéntame</Reveal>
+              <Reveal delay={0.12}>El Problema,</Reveal>
               <Reveal delay={0.24}>
-                <span className="text-ultra-lite">Hablemos.</span>
+                <span className="text-ultra-lite">No La Solución.</span>
               </Reveal>
             </h2>
 
@@ -64,8 +64,8 @@ export function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             >
-              Disponible para nuevos retos en liderazgo técnico y arquitectura
-              de software. Un email o una llamada es suficiente para empezar.
+              El diagnóstico es siempre la primera entrega. Si sabes qué te
+              duele — aunque no sepas por qué — tenemos conversación.
             </motion.p>
           </div>
 

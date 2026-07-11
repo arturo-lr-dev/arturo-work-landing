@@ -8,7 +8,8 @@ import { Project } from "@/types";
 
 const categoryLabels: Record<Project["category"], string> = {
   arquitectura: "Arquitectura",
-  desarrollo: "Desarrollo",
+  datos: "Datos",
+  seguridad: "Seguridad",
   automatizacion: "Automatización",
 };
 
@@ -45,9 +46,9 @@ export function Projects() {
     <section id="projects" className="py-24 md:py-32">
       <Container>
         <SectionHeading
-          meta={`Proyectos · ${projects.length} destacados`}
+          meta={`Casos · ${projects.length} resultados`}
           title="El índice"
-          lead="Una muestra del trabajo en banca digital: arquitectura, producto y eficiencia operativa."
+          lead="Resultados medibles en banca y deporte profesional, contados sin nombres: los NDA también son parte del oficio."
         />
 
         <div className="border-t border-line">
