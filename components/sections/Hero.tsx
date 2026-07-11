@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui";
 import { Reveal, RotatingWord, Marquee, Magnetic } from "@/components/motion";
+import { SceneBoundary } from "@/components/three/SceneBoundary";
 
 const HeroScene = dynamic(
   () => import("@/components/three/HeroScene").then((m) => m.HeroScene),
@@ -32,21 +33,39 @@ export function Hero() {
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const headlineOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
+  // Mount the 3D scene only on wide screens with real WebGL2 support;
+  // CSS-hiding it isn't enough — a mounted canvas can still crash
+  // devices without WebGL2 and take the whole page down with it.
+  const [showScene, setShowScene] = useState(false);
+  useEffect(() => {
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
+    try {
+      const probe = document.createElement("canvas").getContext("webgl2");
+      if (probe) setShowScene(true);
+    } catch {
+      // No WebGL2 — the hero simply skips the scene
+    }
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       className="relative flex min-h-screen flex-col overflow-hidden pt-28 md:pt-32"
     >
       {/* Wireframe system blueprint drifting behind the headline */}
-      <motion.div
-        className="pointer-events-none absolute inset-y-0 right-[-12%] -z-[1] hidden w-[58%] md:block"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4, delay: 0.9 }}
-        aria-hidden
-      >
-        <HeroScene />
-      </motion.div>
+      {showScene && (
+        <motion.div
+          className="pointer-events-none absolute inset-y-0 right-[-12%] -z-[1] w-[58%]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, delay: 0.9 }}
+          aria-hidden
+        >
+          <SceneBoundary>
+            <HeroScene />
+          </SceneBoundary>
+        </motion.div>
+      )}
 
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
         {/* Top meta row */}
@@ -112,9 +131,10 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Ticker of disciplines and tools */}
+      {/* Ticker of disciplines and tools — kept above the parallaxing
+          headline so the CTAs slide underneath it, never over it */}
       <motion.div
-        className="border-y-2 border-ink bg-paper"
+        className="relative z-10 border-y-2 border-ink bg-paper"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
