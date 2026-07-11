@@ -1,179 +1,180 @@
 import { NavItem, Service, Skill, Project, TimelineEvent, SocialLink } from "@/types";
 
 export const siteConfig = {
-  name: "Arturo",
-  title: "Arturo | Full-Service Digital Freelancer",
-  description: "Full-service digital freelancer specializing in development, design, and strategy. Helping businesses build impactful digital experiences.",
-  url: "https://arturo.dev",
-  ogImage: "/og-image.png",
+  name: "Arturo Legaspi",
+  shortName: "Arturo",
+  title: "Arturo Legaspi | Tech Lead",
+  description:
+    "Tech Lead con más de 10 años de experiencia en el sector tecnológico, especializado en arquitectura de software, gestión de equipos y soluciones digitales para el sector bancario.",
+  url: "https://arturo.work",
+  ogImage: "/images/og-image.png",
+  email: "arturo@legasint.com",
+  phone: "+34 649 355 701",
+  phoneHref: "+34649355701",
   links: {
-    twitter: "https://twitter.com/arturo",
-    github: "https://github.com/arturo",
-    linkedin: "https://linkedin.com/in/arturo",
+    github: "https://github.com/arturo-lr-dev",
+    linkedin: "https://linkedin.com/in/arturo-legaspi-rodrigo-393802bb/",
   },
 };
 
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Perfil", href: "#about" },
+  { label: "Especialidades", href: "#services" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Trayectoria", href: "#experience" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 export const services: Service[] = [
   {
-    id: "development",
-    title: "Development",
-    description: "Building robust, scalable web applications with modern technologies and best practices.",
+    id: "arquitectura",
+    title: "Arquitectura",
+    description:
+      "Definición de arquitecturas para servicios críticos: del diseño del core bancario a la operación de millones de transacciones diarias.",
     icon: "code",
     features: [
-      "Full-stack web applications",
-      "E-commerce solutions",
-      "API development & integration",
-      "Performance optimization",
+      "Microservicios y core bancario",
+      "Arquitecturas escalables",
+      "Cloud con AWS CloudFormation",
+      "Big Data con Apache Spark",
     ],
   },
   {
-    id: "design",
-    title: "Design",
-    description: "Creating beautiful, intuitive interfaces that delight users and drive engagement.",
-    icon: "palette",
-    features: [
-      "UI/UX Design",
-      "Design systems",
-      "Brand identity",
-      "Prototyping",
-    ],
-  },
-  {
-    id: "strategy",
-    title: "Strategy",
-    description: "Providing expert guidance to help your digital products succeed in the market.",
+    id: "liderazgo",
+    title: "Liderazgo",
+    description:
+      "Dirección de equipos de ingeniería: estrategia técnica, mentoring y metodologías ágiles que hacen crecer al producto y a las personas.",
     icon: "lightbulb",
     features: [
-      "Technical consulting",
-      "Architecture planning",
-      "Product strategy",
-      "Team mentoring",
+      "Gestión de equipos técnicos",
+      "Estrategia y roadmap técnico",
+      "Mentoring de desarrolladores",
+      "Metodologías ágiles",
+    ],
+  },
+  {
+    id: "desarrollo",
+    title: "Desarrollo",
+    description:
+      "Soluciones digitales de extremo a extremo sobre el ecosistema Java y Spring, con foco en banca y servicios financieros.",
+    icon: "palette",
+    features: [
+      "Java y Spring Framework",
+      "APIs y servicios core",
+      "Automatización de procesos",
+      "Modernización de legacy",
     ],
   },
 ];
 
 export const skills: Skill[] = [
-  // Frontend
-  { name: "React", level: 95, category: "frontend" },
-  { name: "Next.js", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 90, category: "frontend" },
-  { name: "Tailwind CSS", level: 95, category: "frontend" },
-  { name: "Framer Motion", level: 85, category: "frontend" },
   // Backend
-  { name: "Node.js", level: 85, category: "backend" },
-  { name: "Python", level: 80, category: "backend" },
-  { name: "PostgreSQL", level: 80, category: "backend" },
-  { name: "GraphQL", level: 75, category: "backend" },
-  // Design
-  { name: "Figma", level: 90, category: "design" },
-  { name: "Adobe XD", level: 75, category: "design" },
-  { name: "UI/UX", level: 85, category: "design" },
-  // Tools
-  { name: "Git", level: 90, category: "tools" },
-  { name: "Docker", level: 75, category: "tools" },
-  { name: "AWS", level: 70, category: "tools" },
+  { name: "Java", category: "backend" },
+  { name: "Spring Framework", category: "backend" },
+  { name: "Hibernate", category: "backend" },
+  { name: "PostgreSQL", category: "backend" },
+  { name: "MySQL", category: "backend" },
+  // Frontend
+  { name: "JavaScript", category: "frontend" },
+  { name: "HTML5", category: "frontend" },
+  { name: "CSS3", category: "frontend" },
+  // Data & Cloud
+  { name: "Apache Spark", category: "data" },
+  { name: "AWS CloudFormation", category: "data" },
+  // Método
+  { name: "Arquitectura de Software", category: "metodo" },
+  { name: "Metodologías Ágiles", category: "metodo" },
+  { name: "Git", category: "metodo" },
 ];
 
 export const projects: Project[] = [
   {
-    id: "project-1",
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce platform built with Next.js, featuring real-time inventory, payments, and admin dashboard.",
-    image: "/images/projects/ecommerce.jpg",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/example",
-    category: "development",
+    id: "plataforma-bancaria",
+    title: "Plataforma Digital Bancaria",
+    description:
+      "Arquitectura de servicios core que procesa millones de operaciones diarias para banca digital.",
+    image: "/images/proyect-1.png",
+    tags: ["Java", "Spring Boot", "Microservicios", "Big Data"],
+    category: "arquitectura",
   },
   {
-    id: "project-2",
-    title: "SaaS Dashboard",
-    description: "Analytics dashboard for a SaaS product with real-time data visualization and team collaboration features.",
-    image: "/images/projects/dashboard.jpg",
-    tags: ["React", "D3.js", "Node.js", "WebSocket"],
-    liveUrl: "https://example.com",
-    category: "development",
+    id: "gestion-crm",
+    title: "Sistema de Gestión CRM",
+    description:
+      "Aplicación de gestión de cuentas bancarias y clientes, del frontend al backend.",
+    image: "/images/proyect-2.png",
+    tags: ["Java", "Spring Framework", "Hibernate", "JavaScript"],
+    category: "desarrollo",
   },
   {
-    id: "project-3",
-    title: "Brand Identity System",
-    description: "Complete brand identity and design system for a fintech startup, including logo, colors, and component library.",
-    image: "/images/projects/brand.jpg",
-    tags: ["Figma", "Design System", "Branding"],
-    category: "design",
-  },
-  {
-    id: "project-4",
-    title: "Mobile App UI",
-    description: "User interface design for a fitness tracking mobile application with gamification elements.",
-    image: "/images/projects/mobile.jpg",
-    tags: ["UI/UX", "Figma", "Prototyping"],
-    category: "design",
-  },
-  {
-    id: "project-5",
-    title: "Tech Startup Advisory",
-    description: "Technical strategy and architecture consulting for an early-stage startup, from MVP to Series A.",
-    image: "/images/projects/strategy.jpg",
-    tags: ["Strategy", "Architecture", "Mentoring"],
-    category: "strategy",
-  },
-  {
-    id: "project-6",
-    title: "Digital Transformation",
-    description: "Led digital transformation initiative for a traditional retail company, modernizing their tech stack.",
-    image: "/images/projects/transform.jpg",
-    tags: ["Consulting", "Migration", "Training"],
-    category: "strategy",
+    id: "automatizacion-procesos",
+    title: "Automatización de Procesos",
+    description:
+      "Automatización de procesos internos que mejoró la eficiencia operativa un 60%.",
+    image: "/images/proyect-3.png",
+    tags: ["Java", "Spring", "APIs", "DevOps"],
+    category: "automatizacion",
   },
 ];
 
 export const timeline: TimelineEvent[] = [
   {
     id: "timeline-1",
-    date: "2023 - Present",
-    title: "Freelance Digital Consultant",
-    company: "Self-employed",
-    description: "Providing full-service digital solutions to startups and established businesses. Specializing in web development, UI/UX design, and technical strategy.",
+    date: "Dic 2023 — Actualidad",
+    title: "Tech Lead",
+    company: "Santander Digital Services",
+    description:
+      "Liderazgo del equipo técnico, definición de arquitectura y estrategia para servicios digitales bancarios.",
     type: "work",
   },
   {
     id: "timeline-2",
-    date: "2020 - 2023",
-    title: "Senior Frontend Developer",
-    company: "Tech Company",
-    description: "Led frontend development for multiple high-impact projects. Mentored junior developers and established coding standards.",
+    date: "Nov 2021 — Feb 2024",
+    title: "Especialista Técnico Digital",
+    company: "Santander Digital Services",
+    description:
+      "Referencia técnica en soluciones bancarias: servicios core y arquitecturas escalables.",
     type: "work",
   },
   {
     id: "timeline-3",
-    date: "2018 - 2020",
-    title: "Full Stack Developer",
-    company: "Digital Agency",
-    description: "Built web applications for diverse clients across industries. Gained experience in various technologies and project management.",
+    date: "Abr 2018 — Oct 2021",
+    title: "Arquitecto de Software",
+    company: "Vector ITC Group",
+    description:
+      "Arquitectura web, creación de componentes, gestión de equipo y automatización de procesos en entorno ágil.",
     type: "work",
   },
   {
     id: "timeline-4",
-    date: "2018",
-    title: "Computer Science Degree",
-    company: "University",
-    description: "Bachelor's degree in Computer Science with focus on software engineering and human-computer interaction.",
-    type: "education",
+    date: "Jun 2017 — Mar 2018",
+    title: "Analista",
+    company: "innoQA",
+    description:
+      "Desarrollo frontend y modernización de aplicaciones legacy con metodologías ágiles.",
+    type: "work",
+  },
+  {
+    id: "timeline-5",
+    date: "Jul 2015 — Abr 2017",
+    title: "Programador Senior",
+    company: "IMC Solutions España",
+    description:
+      "Sistemas de gestión de cuentas bancarias y CRM, tanto en frontend como en backend.",
+    type: "work",
+  },
+  {
+    id: "timeline-6",
+    date: "Abr 2014 — Abr 2015",
+    title: "Desarrollador",
+    company: "Accenture",
+    description:
+      "Campañas sobre BankSphere: desarrollo con Java, Hibernate y Spring.",
+    type: "work",
   },
 ];
 
 export const socialLinks: SocialLink[] = [
-  { name: "GitHub", url: "https://github.com/arturo", icon: "github" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/arturo", icon: "linkedin" },
-  { name: "Twitter", url: "https://twitter.com/arturo", icon: "twitter" },
+  { name: "LinkedIn", url: siteConfig.links.linkedin, icon: "linkedin" },
+  { name: "GitHub", url: siteConfig.links.github, icon: "github" },
 ];

@@ -1,163 +1,131 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Container, Button } from "@/components/ui";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useRef } from "react";
+import dynamic from "next/dynamic";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui";
+import { Reveal, RotatingWord, Marquee, Magnetic } from "@/components/motion";
+
+const HeroScene = dynamic(
+  () => import("@/components/three/HeroScene").then((m) => m.HeroScene),
+  { ssr: false }
+);
+
+const marqueeItems = [
+  "ARQUITECTURA",
+  "JAVA",
+  "SPRING",
+  "MICROSERVICIOS",
+  "BIG DATA",
+  "AWS",
+  "LIDERAZGO TÉCNICO",
+  "AGILE",
+  "POSTGRESQL",
+];
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const headlineY = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  const headlineOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        {/* Gradient Mesh */}
-        <div className="absolute inset-0 bg-surface-dark">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[128px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-[128px] animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[100px] animate-pulse delay-500" />
-        </div>
-        {/* Grid Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "64px 64px",
-          }}
-        />
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-screen flex-col overflow-hidden pt-28 md:pt-32"
+    >
+      {/* Wireframe system blueprint drifting behind the headline */}
+      <motion.div
+        className="pointer-events-none absolute inset-y-0 right-[-12%] -z-[1] hidden w-[58%] md:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, delay: 0.9 }}
+        aria-hidden
+      >
+        <HeroScene />
+      </motion.div>
+
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
+        {/* Top meta row */}
+        <motion.div
+          className="flex flex-wrap items-center justify-between gap-4 border-b border-ink/15 pb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <p className="eyebrow text-graphite">
+            Arturo Legaspi — Tech Lead
+          </p>
+          <p className="eyebrow flex items-center gap-2 text-graphite">
+            <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-ultra" />
+            Abierto a nuevos desafíos
+          </p>
+        </motion.div>
+
+        {/* Kinetic headline — drifts away as you scroll past */}
+        <motion.div
+          className="flex flex-1 flex-col justify-center py-16"
+          style={{ y: headlineY, opacity: headlineOpacity }}
+        >
+          <h1 className="display-hero text-ink">
+            <Reveal immediate delay={0.15}>Software</Reveal>
+            <Reveal immediate delay={0.27}>Crítico,</Reveal>
+            <Reveal immediate delay={0.39}>
+              <span className="text-ultra">
+                <RotatingWord words={["DISEÑADO", "LIDERADO", "CONSTRUIDO"]} />
+              </span>
+            </Reveal>
+            <Reveal immediate delay={0.51}>A Escala.</Reveal>
+          </h1>
+
+          <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <motion.p
+              className="max-w-md text-lg leading-relaxed text-graphite"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Más de 10 años en el sector financiero: arquitectura de software,
+              equipos de ingeniería y servicios digitales que procesan millones
+              de operaciones al día.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Magnetic>
+                <Button href="#contact" size="lg">
+                  Hablemos
+                </Button>
+              </Magnetic>
+              <Button href="#experience" variant="secondary" size="lg">
+                Ver trayectoria
+              </Button>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Floating Shapes */}
+      {/* Ticker of disciplines and tools */}
       <motion.div
-        className="absolute top-20 right-20 w-20 h-20 border border-primary/30 rounded-2xl"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 10, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-32 left-16 w-16 h-16 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full"
-        animate={{
-          y: [0, 20, 0],
-          x: [0, 10, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/3 left-10 w-12 h-12 border-2 border-accent/30 rounded-full"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <Container>
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-        >
-          {/* Headline */}
-          <motion.h1 className="heading-1 mb-6" variants={fadeInUp}>
-            <span className="text-text-primary">Crafting </span>
-            <span className="gradient-text">Digital Experiences</span>
-            <br />
-            <span className="text-text-primary">That Matter</span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p
-            className="body-large text-text-secondary max-w-2xl mx-auto mb-10"
-            variants={fadeInUp}
-          >
-            Full-service digital freelancer specializing in{" "}
-            <span className="text-primary">development</span>,{" "}
-            <span className="text-secondary">design</span>, and{" "}
-            <span className="text-accent">strategy</span>. Helping businesses build
-            impactful digital products.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            variants={fadeInUp}
-          >
-            <Button href="#contact" size="lg">
-              Start a Project
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Button>
-            <Button href="#projects" variant="secondary" size="lg">
-              View My Work
-            </Button>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-white/5"
-            variants={fadeInUp}
-          >
-            {[
-              { value: "5+", label: "Years Experience" },
-              { value: "50+", label: "Projects Completed" },
-              { value: "30+", label: "Happy Clients" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 + index * 0.1 }}
-              >
-                <div className="text-3xl md:text-4xl font-bold gradient-text">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-text-secondary mt-1">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </Container>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0, y: -10 }}
+        className="border-y-2 border-ink bg-paper"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2 }}
+        transition={{ duration: 0.9, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <motion.div
-          className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2"
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <motion.div className="w-1.5 h-1.5 rounded-full bg-primary" />
-        </motion.div>
+        <Marquee
+          items={marqueeItems}
+          duration={36}
+          className="py-4 font-display text-xl font-bold uppercase tracking-tight md:text-2xl"
+          separator="*"
+          skewOnScroll
+        />
       </motion.div>
     </section>
   );

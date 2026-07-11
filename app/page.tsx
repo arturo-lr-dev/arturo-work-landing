@@ -1,4 +1,6 @@
 import { Navigation, Footer } from "@/components/layout";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Interlude } from "@/components/motion";
 import {
   Hero,
   About,
@@ -7,24 +9,38 @@ import {
   Projects,
   Timeline,
   Contact,
-  BlogPreview,
 } from "@/components/sections";
-import { getLatestPosts } from "@/lib/blog";
 
 export default function Home() {
-  const latestPosts = getLatestPosts(3);
-
   return (
     <>
+      <JsonLd />
       <Navigation />
       <main>
         <Hero />
         <About />
-        <Skills />
         <Services />
+        <Interlude
+          src="/images/proyect-1.png"
+          alt="Ilustración de flujos de transacciones convergiendo en un núcleo central"
+          caption="Plataforma digital bancaria · millones de operaciones al día"
+          mode="drift"
+        />
+        <Skills />
         <Projects />
+        <Interlude
+          src="/images/proyect-2.png"
+          alt="Ilustración de registros de datos fluyendo hacia un sistema de gestión"
+          caption="Sistema de gestión CRM · del frontend al backend"
+          mode="expand"
+        />
         <Timeline />
-        <BlogPreview posts={latestPosts} />
+        <Interlude
+          src="/images/proyect-3.png"
+          alt="Ilustración de procesos convergiendo a través de un punto de automatización"
+          caption="Automatización de procesos · +60% de eficiencia operativa"
+          mode="pan"
+        />
         <Contact />
       </main>
       <Footer />

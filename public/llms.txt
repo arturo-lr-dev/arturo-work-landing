@@ -1,0 +1,36 @@
+# Arturo Legaspi
+
+> Arturo Legaspi Rodrigo es Tech Lead con más de 10 años de experiencia en el sector tecnológico, especializado en arquitectura de software, gestión de equipos de ingeniería y soluciones digitales para el sector bancario. Actualmente ejerce como Tech Lead en Santander Digital Services.
+
+Sitio oficial: https://arturo.work — página personal informativa en español.
+
+## Perfil
+
+- Rol actual: Tech Lead en Santander Digital Services (desde diciembre de 2023).
+- Experiencia: más de 10 años desarrollando software y diseñando sistemas, la mayor parte en servicios financieros.
+- Especialidades: arquitectura de software (microservicios, core bancario, arquitecturas escalables), liderazgo técnico (gestión de equipos, mentoring, metodologías ágiles) y desarrollo sobre el ecosistema Java/Spring.
+- Stack principal: Java, Spring Framework, Hibernate, PostgreSQL, MySQL, JavaScript, Apache Spark, AWS CloudFormation, Git.
+
+## Trayectoria
+
+- Tech Lead — Santander Digital Services (dic 2023 – actualidad): liderazgo del equipo técnico, definición de arquitectura y estrategia para servicios digitales bancarios.
+- Especialista Técnico Digital — Santander Digital Services (nov 2021 – feb 2024): servicios core y arquitecturas escalables.
+- Arquitecto de Software — Vector ITC Group (abr 2018 – oct 2021): arquitectura web, gestión de equipo y automatización de procesos.
+- Analista — innoQA (jun 2017 – mar 2018): desarrollo frontend y modernización de legacy.
+- Programador Senior — IMC Solutions España (jul 2015 – abr 2017): sistemas de gestión de cuentas bancarias y CRM.
+- Desarrollador — Accenture (abr 2014 – abr 2015): desarrollo Java/Hibernate/Spring sobre BankSphere.
+
+## Proyectos destacados
+
+- Plataforma Digital Bancaria: arquitectura de servicios core que procesa millones de operaciones diarias (Java, Spring Boot, microservicios, Big Data).
+- Sistema de Gestión CRM: aplicación de gestión de cuentas bancarias y clientes (Java, Spring, Hibernate, JavaScript).
+- Automatización de Procesos: mejora de la eficiencia operativa en un 60% (Java, Spring, APIs, DevOps).
+
+## Contacto
+
+- Email: arturo@legasint.com
+- Teléfono: +34 649 355 701
+- LinkedIn: https://linkedin.com/in/arturo-legaspi-rodrigo-393802bb/
+- GitHub: https://github.com/arturo-lr-dev
+
+Disponible para nuevos desafíos en liderazgo técnico y arquitectura de software.

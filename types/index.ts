@@ -6,7 +6,7 @@ export interface Project {
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
-  category: "development" | "design" | "strategy";
+  category: "arquitectura" | "desarrollo" | "automatizacion";
 }
 
 export interface Service {
@@ -28,20 +28,9 @@ export interface TimelineEvent {
 
 export interface Skill {
   name: string;
-  level: number;
-  category: "frontend" | "backend" | "design" | "tools";
+  level?: number;
+  category: "backend" | "frontend" | "data" | "metodo";
   icon?: string;
-}
-
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-  image?: string;
-  readingTime: string;
-  content: string;
 }
 
 export interface SocialLink {

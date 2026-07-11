@@ -5,4 +5,3 @@ export { Services } from "./Services";
 export { Projects } from "./Projects";
 export { Timeline } from "./Timeline";
 export { Contact } from "./Contact";
-export { BlogPreview } from "./BlogPreview";

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
+import { SmoothScroll, BackgroundField } from "@/components/motion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,48 +13,58 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arturo.dev"),
+  metadataBase: new URL("https://arturo.work"),
   title: {
-    default: "Arturo | Full-Service Digital Freelancer",
-    template: "%s | Arturo",
+    default: "Arturo Legaspi | Tech Lead",
+    template: "%s | Arturo Legaspi",
   },
   description:
-    "Full-service digital freelancer specializing in development, design, and strategy. Helping businesses build impactful digital experiences.",
+    "Tech Lead con más de 10 años de experiencia, especializado en arquitectura de software, gestión de equipos y soluciones digitales para el sector bancario.",
   keywords: [
-    "freelancer",
-    "web development",
-    "UI/UX design",
-    "digital strategy",
-    "consultant",
-    "React",
-    "Next.js",
-    "TypeScript",
+    "Tech Lead",
+    "arquitectura de software",
+    "Java",
+    "Spring",
+    "microservicios",
+    "banca digital",
+    "liderazgo técnico",
+    "Big Data",
   ],
-  authors: [{ name: "Arturo" }],
-  creator: "Arturo",
+  authors: [{ name: "Arturo Legaspi", url: "https://arturo.work" }],
+  creator: "Arturo Legaspi",
+  alternates: {
+    canonical: "https://arturo.work",
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://arturo.dev",
-    siteName: "Arturo Portfolio",
-    title: "Arturo | Full-Service Digital Freelancer",
-    description: "Development. Design. Strategy.",
+    locale: "es_ES",
+    url: "https://arturo.work",
+    siteName: "Arturo Legaspi",
+    title: "Arturo Legaspi | Tech Lead",
+    description:
+      "Arquitectura de software, equipos de ingeniería y soluciones digitales para el sector financiero.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Arturo - Digital Freelancer",
+        url: "/images/og-image.png",
+        width: 1424,
+        height: 752,
+        alt: "Arturo Legaspi — Tech Lead",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arturo | Full-Service Digital Freelancer",
-    description: "Development. Design. Strategy.",
-    creator: "@arturo",
-    images: ["/og-image.png"],
+    title: "Arturo Legaspi | Tech Lead",
+    description:
+      "Arquitectura de software, equipos de ingeniería y soluciones digitales para el sector financiero.",
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
@@ -70,8 +81,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
-    { media: "(prefers-color-scheme: dark)", color: "#0F0F1A" },
+    { media: "(prefers-color-scheme: light)", color: "#EBECE6" },
+    { media: "(prefers-color-scheme: dark)", color: "#111114" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -83,10 +94,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface-dark text-text-primary`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased bg-paper text-ink`}
       >
+        <SmoothScroll />
+        <BackgroundField />
         {children}
       </body>
     </html>

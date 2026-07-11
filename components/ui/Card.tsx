@@ -11,15 +11,15 @@ interface CardProps extends Omit<HTMLMotionProps<"div">, "ref"> {
   glow?: boolean;
 }
 
-export function Card({ children, className, hover = true, glow = false, ...props }: CardProps) {
+export function Card({ children, className, hover = true, glow: _glow = false, ...props }: CardProps) {
   return (
     <motion.div
       className={cn(
-        "rounded-2xl",
-        "bg-surface-card",
-        "border border-white/5",
+        "bg-chalk",
+        "border border-line",
         "overflow-hidden",
-        glow && "glow-primary",
+        "transition-colors duration-300",
+        hover && "hover:border-ink",
         className
       )}
       whileHover={hover ? cardHover : undefined}

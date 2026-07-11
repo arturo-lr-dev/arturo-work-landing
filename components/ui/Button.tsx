@@ -16,25 +16,25 @@ interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref"> {
 }
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/25",
-  secondary: "bg-surface-card text-text-primary border border-white/10 hover:border-primary/50 hover:bg-surface-card/80",
-  outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  ghost: "text-text-secondary hover:text-text-primary hover:bg-white/5",
+  primary: "bg-ink text-chalk hover:bg-ultra",
+  secondary: "border border-ink text-ink hover:bg-ink hover:text-chalk",
+  outline: "border border-ultra text-ultra hover:bg-ultra hover:text-white",
+  ghost: "text-graphite hover:text-ink",
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
+  sm: "px-5 py-2.5 text-[11px]",
+  md: "px-7 py-3.5 text-xs",
+  lg: "px-9 py-4 text-sm",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = "primary", size = "md", children, className, href, ...props }, ref) => {
     const baseStyles = cn(
       "inline-flex items-center justify-center gap-2",
-      "font-medium rounded-full",
-      "transition-all duration-300",
-      "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-surface-dark",
+      "font-mono font-medium uppercase tracking-[0.18em] rounded-full whitespace-nowrap",
+      "transition-colors duration-300",
+      "focus:outline-none focus-visible:outline-2 focus-visible:outline-ultra focus-visible:outline-offset-2",
       "disabled:opacity-50 disabled:cursor-not-allowed",
       variants[variant],
       sizes[size],
@@ -43,25 +43,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (href) {
       return (
-        <motion.a
-          href={href}
-          className={baseStyles}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
+        <motion.a href={href} className={baseStyles} whileTap={{ scale: 0.97 }}>
           {children}
         </motion.a>
       );
     }
 
     return (
-      <motion.button
-        ref={ref}
-        className={baseStyles}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        {...props}
-      >
+      <motion.button ref={ref} className={baseStyles} whileTap={{ scale: 0.97 }} {...props}>
         {children}
       </motion.button>
     );

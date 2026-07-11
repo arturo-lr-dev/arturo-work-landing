@@ -1,114 +1,122 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui";
-import { fadeInUp, slideInLeft, slideInRight } from "@/lib/animations";
+import { Reveal, Counter, SectionHeading } from "@/components/motion";
+
+const stats = [
+  { value: 10, suffix: "+", label: "Años de experiencia" },
+  { value: 6, suffix: "", label: "Compañías" },
+  { value: 60, suffix: "%", label: "Eficiencia ganada" },
+];
+
+const stack = ["Java", "Spring", "PostgreSQL", "AWS", "Apache Spark", "Git"];
 
 export function About() {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
   return (
-    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px] -z-10" />
-
+    <section id="about" className="py-24 md:py-32">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <motion.div
-            className="relative"
-            variants={slideInLeft}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <div className="relative aspect-square max-w-md mx-auto lg:mx-0">
-              {/* Decorative Frame */}
-              <div className="absolute inset-4 border-2 border-primary/30 rounded-3xl" />
-              <div className="absolute -inset-4 border border-secondary/20 rounded-3xl rotate-3" />
+        <SectionHeading meta="Perfil · Tech Lead" title="Quién hay detrás" />
 
-              {/* Image Container */}
-              <div className="relative z-10 aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
-                {/* Placeholder - Replace with actual image */}
-                <div className="w-full h-full flex items-center justify-center bg-surface-card">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-6xl font-bold text-white">
-                      A
-                    </div>
-                    <p className="mt-4 text-text-secondary text-sm">Your Photo Here</p>
-                  </div>
-                </div>
-              </div>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          {/* Statement */}
+          <div className="lg:col-span-7">
+            <p className="heading-3 text-ink">
+              <Reveal>La mejor arquitectura es la que</Reveal>
+              <Reveal delay={0.1}>
+                su equipo puede sostener —{" "}
+                <span className="text-ultra">construyo las dos cosas.</span>
+              </Reveal>
+            </p>
 
-              {/* Floating Badge */}
-              <motion.div
-                className="absolute -bottom-4 -right-4 md:bottom-8 md:-right-8 bg-surface-card border border-white/10 rounded-2xl px-6 py-4 shadow-xl z-20"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                <div className="text-2xl font-bold gradient-text">5+ Years</div>
-                <div className="text-sm text-text-secondary">of Experience</div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            variants={slideInRight}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <motion.span
-              className="text-primary font-medium tracking-wider uppercase text-sm"
-              variants={fadeInUp}
+            <motion.div
+              className="mt-8 max-w-xl space-y-4 text-graphite"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              About Me
-            </motion.span>
-
-            <motion.h2 className="heading-2 mt-4 mb-6" variants={fadeInUp}>
-              Turning <span className="gradient-text">Ideas</span> Into
-              <br />
-              Digital Reality
-            </motion.h2>
-
-            <motion.div className="space-y-4 text-text-secondary" variants={fadeInUp}>
               <p>
-                Hey there! I&apos;m a passionate digital freelancer with a love for
-                creating beautiful, functional, and user-centered digital experiences.
-                With expertise spanning development, design, and strategy, I bring a
-                holistic approach to every project.
+                Llevo más de diez años desarrollando software y diseñando
+                sistemas, la mayor parte en servicios financieros. Hoy ejerzo
+                como Tech Lead en Santander Digital Services, donde combino la
+                pasión técnica con la dirección de equipos.
               </p>
               <p>
-                I believe great digital products come from understanding both the
-                technical possibilities and the human needs they serve. Whether you&apos;re
-                a startup looking to launch your MVP or an established business ready
-                for a digital transformation, I&apos;m here to help.
-              </p>
-              <p>
-                When I&apos;m not coding or designing, you&apos;ll find me exploring new
-                technologies, contributing to open source, or sharing knowledge with
-                the community.
+                Mi terreno es el software que no puede fallar: core bancario,
+                CRM, automatización de procesos. Defino la arquitectura,
+                acompaño al equipo que la construye y respondo por lo que llega
+                a producción.
               </p>
             </motion.div>
 
-            {/* Skills Preview */}
+            {/* Stack chips */}
             <motion.div
               className="mt-8 flex flex-wrap gap-3"
-              variants={fadeInUp}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.35 }}
             >
-              {["React", "Next.js", "TypeScript", "Figma", "Node.js", "Tailwind"].map(
-                (skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-surface-card border border-white/5 rounded-full text-sm text-text-primary"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
+              {stack.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-[0.14em] text-graphite"
+                >
+                  {tool}
+                </span>
+              ))}
             </motion.div>
-          </motion.div>
+          </div>
+
+          {/* Portrait of the system + stats ledger */}
+          <div className="space-y-10 lg:col-span-4 lg:col-start-9">
+            <motion.div
+              ref={imageRef}
+              className="relative aspect-square overflow-hidden border border-line bg-chalk"
+              initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
+              whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
+              viewport={{ once: true, margin: "-10% 0px" }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.div className="absolute -inset-[8%]" style={{ y: imageY }}>
+                <Image
+                  src="/images/profile.png"
+                  alt="Diagrama isométrico de una arquitectura de software con un componente destacado en azul ultramar"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                />
+              </motion.div>
+            </motion.div>
+
+            <div className="divide-y divide-line border-y border-line">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="flex items-baseline justify-between gap-4 py-6"
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <span className="font-display text-5xl font-extrabold text-ink md:text-6xl">
+                    <Counter to={stat.value} suffix={stat.suffix} />
+                  </span>
+                  <span className="eyebrow text-graphite">{stat.label}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </section>

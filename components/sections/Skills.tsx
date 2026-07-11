@@ -1,131 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Container, Badge } from "@/components/ui";
-import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import { Container } from "@/components/ui";
+import { SectionHeading } from "@/components/motion";
 import { skills } from "@/lib/constants";
 
 const categories = [
-  { id: "frontend", label: "Frontend", color: "primary" },
-  { id: "backend", label: "Backend", color: "secondary" },
-  { id: "design", label: "Design", color: "accent" },
-  { id: "tools", label: "Tools", color: "primary" },
+  { id: "backend", label: "Backend" },
+  { id: "frontend", label: "Frontend" },
+  { id: "data", label: "Data & Cloud" },
+  { id: "metodo", label: "Método" },
 ] as const;
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 relative overflow-hidden bg-surface-card/30">
-      {/* Background */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[128px] -z-10" />
-
+    <section id="skills" className="py-24 md:py-32">
       <Container>
-        <motion.div
-          className="text-center max-w-2xl mx-auto mb-16"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-        >
-          <motion.span
-            className="text-primary font-medium tracking-wider uppercase text-sm"
-            variants={fadeInUp}
-          >
-            Skills & Expertise
-          </motion.span>
-          <motion.h2 className="heading-2 mt-4" variants={fadeInUp}>
-            Technologies I{" "}
-            <span className="gradient-text">Work With</span>
-          </motion.h2>
-          <motion.p className="text-text-secondary mt-4" variants={fadeInUp}>
-            A diverse toolkit that enables me to tackle any digital challenge,
-            from concept to deployment.
-          </motion.p>
-        </motion.div>
+        <SectionHeading
+          meta={`Stack · ${skills.length} tecnologías`}
+          title="Las herramientas"
+          lead="El stack cambia según el proyecto; el criterio no. Este es el conjunto de trabajo actual."
+        />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {categories.map((category) => (
-            <motion.div
-              key={category.id}
-              className="p-6 rounded-2xl bg-surface-card border border-white/5"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h3 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
-                <span
-                  className={`w-2 h-2 rounded-full ${
-                    category.color === "primary"
-                      ? "bg-primary"
-                      : category.color === "secondary"
-                      ? "bg-secondary"
-                      : "bg-accent"
-                  }`}
-                />
-                {category.label}
-              </h3>
-
+        <div className="divide-y divide-line border-y border-line">
+          {categories.map((category, index) => {
+            const items = skills.filter((s) => s.category === category.id);
+            return (
               <motion.div
-                className="flex flex-wrap gap-3"
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
+                key={category.id}
+                className="grid gap-4 py-8 md:grid-cols-12 md:items-baseline"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-5% 0px" }}
+                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
-                {skills
-                  .filter((skill) => skill.category === category.id)
-                  .map((skill) => (
-                    <motion.div
+                <div className="md:col-span-3">
+                  <span className="eyebrow text-graphite">
+                    {category.label} · {items.length}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-x-8 gap-y-3 md:col-span-9">
+                  {items.map((skill, i) => (
+                    <motion.span
                       key={skill.name}
-                      variants={staggerItem}
-                      whileHover={{ scale: 1.05 }}
+                      className="font-display text-2xl font-bold uppercase tracking-tight text-ink transition-colors duration-200 hover:text-ultra md:text-3xl"
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.15 + i * 0.05,
+                        ease: [0.16, 1, 0.3, 1],
+                      }}
                     >
-                      <Badge
-                        variant={
-                          category.color === "primary"
-                            ? "primary"
-                            : category.color === "secondary"
-                            ? "secondary"
-                            : "accent"
-                        }
-                      >
-                        {skill.name}
-                      </Badge>
-                    </motion.div>
+                      {skill.name}
+                    </motion.span>
                   ))}
+                </div>
               </motion.div>
-
-              {/* Skill Bars */}
-              <div className="mt-6 space-y-4">
-                {skills
-                  .filter((skill) => skill.category === category.id)
-                  .slice(0, 3)
-                  .map((skill) => (
-                    <div key={`bar-${skill.name}`} className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-text-primary">{skill.name}</span>
-                        <span className="text-text-secondary">{skill.level}%</span>
-                      </div>
-                      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                          className={`h-full rounded-full ${
-                            category.color === "primary"
-                              ? "bg-gradient-to-r from-primary to-primary/50"
-                              : category.color === "secondary"
-                              ? "bg-gradient-to-r from-secondary to-secondary/50"
-                              : "bg-gradient-to-r from-accent to-accent/50"
-                          }`}
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.2 }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>
