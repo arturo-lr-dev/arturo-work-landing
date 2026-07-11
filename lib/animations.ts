@@ -79,7 +79,7 @@ export const letterAnimation: Variants = {
 export const hoverScale = {
   scale: 1.05,
   transition: { type: "spring", stiffness: 400, damping: 10 },
-};
+} as const;
 
 export const tapScale = {
   scale: 0.98,
@@ -88,4 +88,4 @@ export const tapScale = {
 export const cardHover = {
   y: -8,
   transition: { type: "spring", stiffness: 400, damping: 17 },
-};
+} as const;

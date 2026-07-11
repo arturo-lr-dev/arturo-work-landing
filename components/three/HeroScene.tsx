@@ -24,7 +24,10 @@ const blocks: { p: [number, number, number]; s: [number, number, number] }[] = [
 ];
 
 // The highlighted component — the one piece rendered solid, in ultramarine
-const ultraBlock = { p: [-0.5, -0.25, 0.6], s: [1.35, 0.7, 1.35] };
+const ultraBlock: { p: [number, number, number]; s: [number, number, number] } = {
+  p: [-0.5, -0.25, 0.6],
+  s: [1.35, 0.7, 1.35],
+};
 
 function WireBlock({
   p,

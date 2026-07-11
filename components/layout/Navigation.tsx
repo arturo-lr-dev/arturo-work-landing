@@ -23,20 +23,20 @@ export function Navigation() {
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     if (isMobileMenuOpen) {
-      window.lenis?.stop();
+      window.__lenis?.stop();
     } else {
-      window.lenis?.start();
+      window.__lenis?.start();
     }
     return () => {
       document.body.style.overflow = "";
-      window.lenis?.start();
+      window.__lenis?.start();
     };
   }, [isMobileMenuOpen]);
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false);
-    if (window.lenis) {
-      window.lenis.scrollTo(href, { duration: 1.4 });
+    if (window.__lenis) {
+      window.__lenis.scrollTo(href, { duration: 1.4 });
       return;
     }
     const element = document.querySelector(href);
@@ -73,8 +73,8 @@ export function Navigation() {
               className="font-display text-xl font-extrabold uppercase tracking-tight"
               onClick={(e) => {
                 e.preventDefault();
-                if (window.lenis) {
-                  window.lenis.scrollTo(0, { duration: 1.4 });
+                if (window.__lenis) {
+                  window.__lenis.scrollTo(0, { duration: 1.4 });
                 } else {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }

@@ -5,7 +5,7 @@ import Lenis from "lenis";
 
 declare global {
   interface Window {
-    lenis?: Lenis;
+    __lenis?: Lenis;
   }
 }
 
@@ -17,7 +17,7 @@ export function SmoothScroll() {
     }
 
     const lenis = new Lenis({ lerp: 0.12 });
-    window.lenis = lenis;
+    window.__lenis = lenis;
 
     let raf = requestAnimationFrame(function loop(time) {
       lenis.raf(time);
@@ -27,7 +27,7 @@ export function SmoothScroll() {
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
-      delete window.lenis;
+      delete window.__lenis;
     };
   }, []);
 
