@@ -12,7 +12,7 @@ export function Method() {
         <SectionHeading
           meta={`Método · ${method.length} pasos, siempre en este orden`}
           title="Cómo trabajo"
-          lead="Método, no improvisación: cada proyecto recorre los mismos cinco pasos, y el diagnóstico nunca se salta."
+          lead="Método, no improvisación: cada proyecto recorre los mismos cinco pasos, y siempre empieza por el diagnóstico."
         />
 
         <div className="border-t-2 border-ink">

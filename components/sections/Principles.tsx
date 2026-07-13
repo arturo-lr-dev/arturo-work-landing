@@ -12,7 +12,7 @@ export function Principles() {
         <SectionHeading
           meta={`Principios · ${principles.length} convicciones`}
           title="Cómo pienso"
-          lead="Las tecnologías rotan cada pocos años; esto es lo que no negocio en ningún proyecto."
+          lead="Las tecnologías rotan cada pocos años; estos son mis innegociables en cualquier proyecto."
         />
 
         <div className="border-t border-line">

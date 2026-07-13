@@ -20,7 +20,7 @@ export function Timeline() {
         <SectionHeading
           meta={`Trayectoria · ${timeline.length} etapas`}
           title="El recorrido"
-          lead="De becario a Tech Lead sin atajos: cada etapa empezó con algo que no sabía hacer."
+          lead="De becario a Tech Lead sin atajos: cada etapa empezó fuera de mi zona de confort."
         />
 
         <div ref={listRef} className="relative max-w-4xl">
